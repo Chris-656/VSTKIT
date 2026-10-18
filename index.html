@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VST-KIT Config</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://unpkg.com/esp-web-tools@10.3.0/dist/web/install-button.js?module"></script>
+</head>
+<body>
+<main>
+  <h1>VST-KIT Konfiguration</h1>
+  <div class="layout">
+    <aside class="side">
+  <section class="card">
+    <h2>Verbindung</h2>
+    <div class="stack">
+      <button id="btnBle" class="primary">Bluetooth (Gamepad-Modus)</button>
+      <button id="btnBleAll" title="Zeigt alle Bluetooth-Geräte, auch ein vom PC schon verbundenes VST-KIT">Bluetooth (alle Geräte)</button>
+      <button id="btnSerial">USB (Serial)</button>
+      <button id="btnDisconnect" disabled>Trennen</button>
+    </div>
+    <div class="infolines">
+      <span id="status" class="status">Nicht verbunden</span>
+      <span id="version" class="status" hidden></span>
+      <span id="key" class="status" hidden></span>
+    </div>
+    <p class="status">Bluetooth: Im Edge-Dialog das VST-KIT wählen und „Pairing durchführen“ klicken. Ist es in Windows schon gekoppelt, wird dabei nicht neu gekoppelt, der Knopf heißt nur so.</p>
+    <p class="status" id="support" hidden></p>
+  </section>
+
+  <section class="card" id="portCard" hidden>
+    <h2>USB-Geräte</h2>
+    <div id="portList" class="status"></div>
+    <div class="row">
+      <button type="button" id="btnAddPort">Gerät hinzufügen …</button>
+      <button type="button" id="btnRescan">Neu suchen</button>
+      <button type="button" id="btnClosePorts">Schließen</button>
+    </div>
+    <p class="status">Beim Suchen startet jeder ESP32 kurz neu.</p>
+  </section>
+
+  <section class="card" id="fwCard">
+    <h2>Firmware</h2>
+    <p class="status" id="fwInfo">Prüfe verfügbare Version …</p>
+    <esp-web-install-button id="fwInstall" manifest="firmware/manifest.json">
+      <button slot="activate" type="button" id="btnFlash">Firmware per USB installieren</button>
+      <span slot="unsupported" class="status err">Dieser Browser unterstützt kein Web Serial – bitte Chrome oder Edge verwenden.</span>
+      <span slot="not-allowed" class="status err">Nur über HTTPS oder localhost möglich.</span>
+    </esp-web-install-button>
+    <p class="status">Das Gerät muss per USB am PC hängen. Konfiguration und Key bleiben erhalten. </p>
+  </section>
+    </aside>
+
+    <div class="content">
+  <section class="card" id="liveCard" hidden>
+    <h2>Live-Werte</h2>
+    <div class="live">
+      <div>Lenkrad<b id="live1">–</b></div>
+      <div>Gas 1<b id="live2">–</b></div>
+      <div>Gas 2<b id="live3">–</b></div>
+    </div>
+  </section>
+
+  <form id="form" hidden>
+    <section class="card">
+      <h2>Board</h2>
+      <div class="grid">
+        <label>Refresh-Intervall (ms)<input type="number" data-path="board.refreshIntervall" min="1" max="1000" step="1"></label>
+        <label>Serial Baudrate<input type="number" data-path="board.serialBaud" step="1"></label>
+        <label>Debuglevel
+          <select data-path="board.debuglevel" data-type="int">
+            <option value="0">0 – Error</option><option value="1">1 – Warning</option>
+            <option value="2">2 – Info</option><option value="3">3 – Debug</option><option value="4">4 – Trace</option>
+          </select></label>
+        <label class="check"><input type="checkbox" data-path="board.usejoystick"> Gamepad-Modus (BLE)</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>WLAN</h2>
+      <div class="grid">
+        <label class="check"><input type="checkbox" data-path="wifi.activated"> WLAN aktiv</label>
+        <label>SSID<input type="text" data-path="wifi.ssid"></label>
+        <label>Passwort<input type="password" data-path="wifi.password" autocomplete="off"></label>
+        <label>Hostname<input type="text" data-path="wifi.hostname"></label>
+      </div>
+    </section>
+
+    <div id="sensors"></div>
+
+    <section class="card">
+      <div class="row">
+        <button type="submit" class="primary">Auf ESP schreiben</button>
+        <button type="button" id="btnReload">Neu laden</button>
+        <button type="button" id="btnReboot">ESP neu starten</button>
+        <button type="button" id="btnExport">Export</button>
+        <button type="button" id="btnImport">Import</button>
+        <input type="file" id="fileImport" accept="application/json" hidden>
+      </div>
+      <p class="status" id="info"></p>
+    </section>
+  </form>
+
+  <details class="card" id="logBox" open>
+    <summary>Log</summary>
+    <pre id="log"></pre>
+  </details>
+    </div>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
