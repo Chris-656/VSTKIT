@@ -1,6 +1,6 @@
 {
   "name": "VST-KIT",
-  "version": "vstkit_39_3.1.6",
+  "version": "vstkit_39_3.1.7",
   "new_install_prompt_erase": false,
   "builds": [
     {
