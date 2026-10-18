@@ -366,7 +366,13 @@ function updateFwInfo() {
 async function loadAvailableVersion() {
   try {
     const r = await fetch("firmware/version.json", { cache: "no-store" });
-    availableVersion = (await r.json()).version;
+    const info = await r.json();
+    availableVersion = info.version;
+    if (info.full) {                                   // link to the complete image, version is part of the file name
+      $("fwFull").href = "firmware/" + info.full;
+      $("fwFull").textContent = info.full;
+      $("fwFullBox").hidden = false;
+    }
   } catch (e) { availableVersion = null; }
   updateFwInfo();
 }
