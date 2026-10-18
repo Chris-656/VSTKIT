@@ -7,8 +7,8 @@
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "vstkit_39_3.1.9_full.bin",
-          "offset": 0
+          "path": "vstkit_39_3.1.9_update.bin",
+          "offset": 57344
         }
       ]
     }
