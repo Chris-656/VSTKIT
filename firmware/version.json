@@ -1,8 +1,8 @@
 {
-  "version": "vstkit_39_3.1.9",
+  "version": "vstkit_39_3.1.10",
   "hw": 39,
-  "sw": "3.1.9",
-  "full": "vstkit_39_3.1.9_full.bin",
-  "update": "vstkit_39_3.1.9_update.bin",
-  "built": "2026-10-18T11:46:44+02:00"
+  "sw": "3.1.10",
+  "full": "vstkit_39_3.1.10_full.bin",
+  "update": "vstkit_39_3.1.10_update.bin",
+  "built": "2026-10-26T21:18:01+01:00"
 }
