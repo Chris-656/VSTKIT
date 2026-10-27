@@ -1,13 +1,13 @@
 {
   "name": "VST-KIT",
-  "version": "vstkit_39_3.1.10",
+  "version": "vstkit_39_3.1.11",
   "new_install_prompt_erase": false,
   "builds": [
     {
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "vstkit_39_3.1.10_full.bin",
+          "path": "vstkit_39_3.1.11_full.bin",
           "offset": 0
         }
       ]
