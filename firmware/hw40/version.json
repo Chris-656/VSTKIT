@@ -1,8 +1,8 @@
 {
-  "version": "vstkit_40_3.2.3",
+  "version": "vstkit_40_3.2.4",
   "hw": 40,
-  "sw": "3.2.3",
-  "full": "vstkit_40_3.2.3_full.bin",
-  "update": "vstkit_40_3.2.3_update.bin",
-  "built": "2026-11-03T10:19:42+01:00"
+  "sw": "3.2.4",
+  "full": "vstkit_40_3.2.4_full.bin",
+  "update": "vstkit_40_3.2.4_update.bin",
+  "built": "2026-11-03T12:00:26+01:00"
 }
