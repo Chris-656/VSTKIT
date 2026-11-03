@@ -1,0 +1,16 @@
+{
+  "name": "VST-KIT",
+  "version": "vstkit_50_3.2.3",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "vstkit_50_3.2.3_full.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

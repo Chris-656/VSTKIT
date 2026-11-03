@@ -1,13 +1,13 @@
 {
   "name": "VST-KIT",
-  "version": "vstkit_30_3.2.2",
+  "version": "vstkit_30_3.2.3",
   "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "vstkit_30_3.2.2_update.bin",
+          "path": "vstkit_30_3.2.3_update.bin",
           "offset": 57344
         }
       ]
