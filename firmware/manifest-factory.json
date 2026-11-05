@@ -1,13 +1,13 @@
 {
   "name": "VST-KIT",
-  "version": "vstkit_50_3.2.5",
+  "version": "vstkit_50_3.2.6",
   "new_install_prompt_erase": false,
   "builds": [
     {
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "hw50/vstkit_50_3.2.5_full.bin",
+          "path": "hw50/vstkit_50_3.2.6_full.bin",
           "offset": 0
         }
       ]

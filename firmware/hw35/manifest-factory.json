@@ -1,13 +1,13 @@
 {
   "name": "VST-KIT",
-  "version": "vstkit_35_3.2.5",
+  "version": "vstkit_35_3.2.6",
   "new_install_prompt_erase": false,
   "builds": [
     {
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "vstkit_35_3.2.5_full.bin",
+          "path": "vstkit_35_3.2.6_full.bin",
           "offset": 0
         }
       ]
